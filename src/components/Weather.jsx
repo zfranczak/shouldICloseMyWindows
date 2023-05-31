@@ -1,4 +1,4 @@
-import React from 'react';
+import '../styles/weather.scss';
 
 const Weather = () => {
   return (
@@ -7,7 +7,7 @@ const Weather = () => {
         <h2>Enter Your Location</h2>
         <input />
       </div>
-      <button>Tell Me Already!</button>
+      <button className='btn btn-location'>Find Out</button>
     </div>
   );
 };

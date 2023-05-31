@@ -2,14 +2,24 @@ import { useState } from 'react';
 import NavBar from './components/NavBar';
 import Header from './components/Header';
 import Weather from './components/Weather';
+import Search from './components/search/search';
 import './App.css';
 
-export default function App() {
+function App() {
+  const handleOnSearchChange = (searchData) => {
+    console.log(searchData);
+  };
+
   return (
     <>
       <NavBar />
-      <Header />
-      <Weather />
+      <div className='container'>
+        <Header />
+        <Weather />
+        <Search onSearchChange={handleOnSearchChange} />
+      </div>
     </>
   );
 }
+
+export default App;

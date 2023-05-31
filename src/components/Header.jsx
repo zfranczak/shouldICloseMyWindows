@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className='header'>
       <h1>Should I Close My Windows</h1>
-      <p>
+      {/*     <p>
         <strong>Should I Close My Windows</strong> is a web app designed to help
         users make informed decisions about whether to close or open their
         windows based on various factors. By integrating with weather APIs and
@@ -17,6 +17,7 @@ const Header = () => {
         notifications, the app empowers users to create a comfortable and
         energy-efficient living environment.
       </p>
+  */}
     </header>
   );
 };
