@@ -1,35 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+      <h1>Should I Close My Windows</h1>
+      <p>
+        <strong>Should I Close My Windows</strong> is a web app designed to help
+        users make informed decisions about whether to close or open their
+        windows based on various factors. By integrating with weather APIs and
+        air quality data sources, the app provides real-time information on
+        temperature changes, air quality levels, and pollen counts. Users can
+        optimize their energy consumption by cooling their homes during cooler
+        periods and ensuring a healthy indoor environment by avoiding polluted
+        or allergen-filled air. With a user-friendly interface and personalized
+        notifications, the app empowers users to create a comfortable and
+        energy-efficient living environment.
       </p>
     </>
-  )
+  );
 }
-
-export default App
