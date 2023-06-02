@@ -2,7 +2,7 @@ import { useState } from 'react';
 import NavBar from './components/NavBar';
 import Header from './components/Header';
 import Weather from './components/Weather';
-import Search from './components/search/search';
+import Search from './components/search/Search';
 import './App.css';
 
 function App() {
@@ -12,10 +12,10 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
       <div className='container'>
         <Header />
-        <Weather />
+        {/* <Weather /> */}
         <Search onSearchChange={handleOnSearchChange} />
       </div>
     </>
