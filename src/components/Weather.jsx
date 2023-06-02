@@ -19,6 +19,7 @@ const Weather = () => {
     try {
       const response = await axios.request(options);
       setCities(response.data.data);
+      console.log(cities);
     } catch (error) {
       console.error(error);
     }
@@ -38,11 +39,14 @@ const Weather = () => {
         <button className='btn btn-location'>Find Out</button>
       </form>
       {cities.map((city) => (
-        <div key={city.id}>
+        <div key={city.id} className='city-results'>
+          <br />
           <h3>{city.name}</h3>
           <p>Country: {city.country}</p>
+          <p>State/Region: {city.region}</p>
           <p>Latitude: {city.latitude}</p>
           <p>Longitude: {city.longitude}</p>
+          <br />
         </div>
       ))}
     </div>
