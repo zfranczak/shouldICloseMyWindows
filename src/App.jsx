@@ -15,8 +15,8 @@ function App() {
       {/* <NavBar /> */}
       <div className='container'>
         <Header />
-        {/* <Weather /> */}
-        <Search onSearchChange={handleOnSearchChange} />
+        <Weather />
+        {/* <Search onSearchChange={handleOnSearchChange} /> */}
       </div>
     </>
   );
