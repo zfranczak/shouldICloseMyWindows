@@ -25,6 +25,11 @@ const Weather = () => {
     }
   };
 
+  const handleCityClick = async (e) => {
+    e.preventDefault();
+    console.log('City was clicked');
+  };
+
   return (
     <div>
       <form className='locationInput' onSubmit={handleSubmit}>
@@ -39,7 +44,7 @@ const Weather = () => {
         <button className='btn btn-location'>Find Out</button>
       </form>
       {cities.map((city) => (
-        <div key={city.id} className='city-results'>
+        <div key={city.id} className='city-results' onClick={handleCityClick}>
           <br />
           <h3>{city.name}</h3>
           <p>Country: {city.country}</p>

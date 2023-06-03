@@ -16,6 +16,14 @@
 }
 
 .city-results {
-  background-color: rgb(57, 2, 151);
+  background-color: rgb(121, 37, 4);
   border: solid black 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.city-results:hover {
+  background-color: rgba(32, 183, 125, 0.661);
+  cursor: pointer;
 }
