@@ -4,7 +4,7 @@ import '../styles/header.scss';
 const Header = () => {
   return (
     <header className='header'>
-      <h1>Should I Close My Windows</h1>
+      <h1 className='app-title'>Should I Close My Windows</h1>
       {/*     <p>
         <strong>Should I Close My Windows</strong> is a web app designed to help
         users make informed decisions about whether to close or open their

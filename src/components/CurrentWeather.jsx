@@ -40,5 +40,3 @@ const CurrentWeather = () => {
 };
 
 export default CurrentWeather;
-
-// url: `https://api.openweathermap.org/data/2.5/weather?lat={city.latitude}&lon={city.longitude}&appid={4849d3e1a14df9aa614d3c83e9e51352}`,

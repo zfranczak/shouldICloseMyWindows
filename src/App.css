@@ -1,4 +1,12 @@
 .container {
   max-width: 1080px;
-  margin: 20px auto;
+  margin: auto;
+  background-color: rgb(26, 85, 137);
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }

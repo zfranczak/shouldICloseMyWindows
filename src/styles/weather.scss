@@ -4,6 +4,8 @@
   border: none;
   height: 2rem;
   width: 10rem;
+  background-color: green;
+  box-shadow: 10px -2px 20px 2px rgba(0, 0, 0, 0.3);
 }
 
 .btn:hover {
@@ -17,17 +19,45 @@
 
 .location-input {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.city-input {
+  max-width: 300px;
+  height: 30px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.city-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
 }
 
 .city-results {
-  background-color: rgb(121, 37, 4);
-  border: solid black 10px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  background-color: rgb(225, 82, 82);
+  border: solid rgb(199, 142, 142) 10px;
+  min-width: 400px;
+  border-radius: 15px;
+  margin: 5px auto;
+  box-shadow: 10px -2px 20px 2px rgba(0, 0, 0, 0.3);
+}
+
+.city-results:hover {
+  border-color: rgb(139, 182, 139);
+}
+
+.city-details {
+  text-align: center;
 }
 
 .city-results:hover {
   background-color: rgba(32, 183, 125, 0.661);
   cursor: pointer;
+}
+
+.region {
+  text-align: center;
 }

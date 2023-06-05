@@ -16,10 +16,12 @@ function App() {
       {/* <NavBar /> */}
       <div className='container'>
         <Header />
-        <CurrentWeather />
-        <Weather />
+        <div className='weather-container'>
+          <Weather onSearchChange={handleOnSearchChange} />
+          <CurrentWeather />
 
-        {/* <Search onSearchChange={handleOnSearchChange} /> */}
+          {/* <Search onSearchChange={handleOnSearchChange} /> */}
+        </div>
       </div>
     </>
   );
