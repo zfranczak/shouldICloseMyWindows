@@ -12,18 +12,18 @@ function App() {
   };
 
   return (
-    <>
+    <div className='background'>
       {/* <NavBar /> */}
       <div className='container'>
         <Header />
         <div className='weather-container'>
-          <Weather onSearchChange={handleOnSearchChange} />
+          <Weather />
           <CurrentWeather />
 
           {/* <Search onSearchChange={handleOnSearchChange} /> */}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

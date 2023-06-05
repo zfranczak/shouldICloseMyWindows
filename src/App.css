@@ -2,11 +2,11 @@
   max-width: 1080px;
   margin: auto;
   background-color: rgb(26, 85, 137);
+  height: 100vh;
 }
 
 .weather-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
+  align-items: flex-start;
 }

@@ -46,7 +46,7 @@ const Weather = () => {
   };
 
   return (
-    <div>
+    <div className='weather-component'>
       <form className='location-input' onSubmit={handleSubmit}>
         <h2>Enter Your Location</h2>
         <input
