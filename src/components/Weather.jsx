@@ -11,7 +11,7 @@ const Weather = () => {
       method: 'GET',
       url: `https://wft-geo-db.p.rapidapi.com/v1/geo/cities/?namePrefix=${name}`,
       headers: {
-        'X-RapidAPI-Key': `${CITY_API}`,
+        'X-RapidAPI-Key': import.meta.env.VITE_CITY_API,
         'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com',
       },
     };
