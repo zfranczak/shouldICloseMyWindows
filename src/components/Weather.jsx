@@ -32,7 +32,7 @@ const Weather = () => {
 
   return (
     <div>
-      <form className='locationInput' onSubmit={handleSubmit}>
+      <form className='location-input' onSubmit={handleSubmit}>
         <h2>Enter Your Location</h2>
         <input
           type='text'
