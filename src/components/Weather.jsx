@@ -48,13 +48,13 @@ const Weather = () => {
   return (
     <div className='weather-component'>
       <form className='location-input' onSubmit={handleSubmit}>
-        <h2>Enter Your Location</h2>
         <input
           type='text'
           className='city-input'
           name='name'
           value={name}
           onChange={(e) => setName(e.target.value)}
+          placeholder='Enter a City'
           required
         />
         <button className='btn btn-location'>Find Out</button>
