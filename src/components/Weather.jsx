@@ -2,10 +2,11 @@ import '../styles/weather.scss';
 import { useState } from 'react';
 import axios from 'axios';
 
-const Weather = () => {
+const Weather = (props) => {
   const [cities, setCities] = useState([]);
   const [name, setName] = useState('');
-  const [weatherData, setWeatherData] = useState(null);
+  const weatherData = props.weatherData;
+  const setWeatherData = props.setWeatherData;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,7 +40,7 @@ const Weather = () => {
         }&units=imperial`
       );
       setWeatherData(weatherResponse.data);
-      console.log(weatherData);
+      console.log(weatherResponse.data);
     } catch (error) {
       console.error(error);
     }

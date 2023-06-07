@@ -1,26 +1,22 @@
 import { useState } from 'react';
-import NavBar from './components/NavBar';
 import Header from './components/Header';
 import Weather from './components/Weather';
-import Search from './components/search/Search';
 import CurrentWeather from './components/CurrentWeather';
 import './App.css';
 
 function App() {
-  const handleOnSearchChange = (searchData) => {
-    console.log(searchData);
+  const [weatherData, setWeatherData] = useState(null);
+  const handleWeatherData = (data) => {
+    setWeatherData(data);
   };
 
   return (
     <div className='background'>
-      {/* <NavBar /> */}
       <div className='container'>
         <Header />
         <div className='weather-container'>
-          <Weather />
-          <CurrentWeather />
-
-          {/* <Search onSearchChange={handleOnSearchChange} /> */}
+          <CurrentWeather weatherData={weatherData} />
+          <Weather setWeatherData={handleWeatherData} />
         </div>
       </div>
     </div>
