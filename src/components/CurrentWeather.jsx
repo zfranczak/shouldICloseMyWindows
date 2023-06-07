@@ -6,14 +6,17 @@ const CurrentWeather = ({ weatherData }) => {
   if (!weatherData) {
     return null;
   }
+  const weatherIconUrl = `icons/${weatherData.weather[0].icon}.png`;
   return (
     <div className='weather'>
       <div className='top'>
         <div>
           <p className='city'>{weatherData.name}</p>
-          <p className='weather-description'>Sunny</p>
+          <p className='weather-description'>
+            {weatherData.weather[0].description}
+          </p>
         </div>
-        <img alt='weather' className='weather-icon' src='icons/01d.png' />
+        <img alt='weather' className='weather-icon' src={weatherIconUrl} />
       </div>
       <div className='bottom'>
         <p className='temperature'>
@@ -32,7 +35,7 @@ const CurrentWeather = ({ weatherData }) => {
           <div className='parameter-row'>
             <span className='parameter-label'>Wind</span>
             <span className='parameter-value'>
-              {Math.round(weatherData.wind.speed)} m/s
+              {Math.round(weatherData.wind.speed)} MPH
             </span>
           </div>
           <div className='parameter-row'>

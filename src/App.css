@@ -1,12 +1,10 @@
 .container {
   max-width: 1080px;
   margin: auto;
-  background-color: rgb(26, 85, 137);
-  height: 100vh;
 }
 
 .weather-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
 }

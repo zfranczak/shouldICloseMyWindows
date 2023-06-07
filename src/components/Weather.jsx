@@ -78,16 +78,6 @@ const Weather = (props) => {
           </div>
         ))}
       </div>
-      {weatherData && (
-        <div>
-          <h2>Weather Information</h2>
-          <p>City: {weatherData.name} </p>
-          <p>Temperature: {weatherData.main.temp} F</p>
-          <p>Humidity: {weatherData.main.humidity}%</p>
-          <p>Wind Speed: {weatherData.wind.speed} m/s</p>
-          {/* Add more weather data fields as needed */}
-        </div>
-      )}
     </div>
   );
 };
