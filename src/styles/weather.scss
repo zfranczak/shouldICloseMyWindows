@@ -62,6 +62,12 @@
   font-size: 0.8rem;
 }
 
+.city-details p,
+h3 {
+  margin: 1px;
+  letter-spacing: 2px;
+}
+
 .city-results:hover {
   background-color: rgba(32, 183, 125, 0.661);
   cursor: pointer;
