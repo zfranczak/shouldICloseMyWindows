@@ -4,10 +4,13 @@ import Weather from './components/Weather';
 import CurrentWeather from './components/CurrentWeather';
 import WindowQuestion from './components/WindowQuestion';
 import './App.css';
+import AirQuality from './components/AirQuality';
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [cityClicked, setCityClicked] = useState(false);
+  const [lat, setLat] = useState(0);
+  const [lon, setLon] = useState(0);
 
   const handleWeatherData = (data) => {
     setWeatherData(data);
@@ -21,7 +24,12 @@ function App() {
         {cityClicked && <WindowQuestion weatherData={weatherData} />}{' '}
         <div className='weather-container'>
           <CurrentWeather weatherData={weatherData} />
-          <Weather setWeatherData={handleWeatherData} />
+          {cityClicked && <AirQuality lat={lat} lon={lon} />}{' '}
+          <Weather
+            setWeatherData={handleWeatherData}
+            setLon={setLon}
+            setLat={setLat}
+          />
         </div>
       </div>
     </div>

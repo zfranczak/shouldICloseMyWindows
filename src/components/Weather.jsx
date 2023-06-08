@@ -7,6 +7,10 @@ const Weather = (props) => {
   const [name, setName] = useState('');
   const weatherData = props.weatherData;
   const setWeatherData = props.setWeatherData;
+  const lat = props.lat;
+  const setLat = props.setLat;
+  const lon = props.lon;
+  const setLon = props.setLon;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,6 +27,7 @@ const Weather = (props) => {
       const response = await axios.request(options);
       setCities(response.data.data);
       console.log(cities);
+      console.log(response.data.data);
     } catch (error) {
       console.error(error);
     }
@@ -40,6 +45,8 @@ const Weather = (props) => {
         }&units=imperial`
       );
       setWeatherData(weatherResponse.data);
+      setLon(city.longitude);
+      setLat(city.latitude);
       console.log(weatherResponse.data);
     } catch (error) {
       console.error(error);
@@ -73,6 +80,8 @@ const Weather = (props) => {
               </h3>
               <div className='region'>
                 <p>{city.country}</p>
+                <p>{lat}</p>
+                <p>{lon}</p>
               </div>
             </div>
           </div>
