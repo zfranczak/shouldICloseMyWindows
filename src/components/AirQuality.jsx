@@ -2,17 +2,17 @@ import React, { useEffect, useState } from 'react';
 import '../styles/aq.scss';
 
 const AirQuality = ({ lat, lon }) => {
-  const apiKey = import.meta.env.VITE_OPEN_AQ_API_KEY;
+  const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
   const [pmValue, setPmValue] = useState(null);
   const [error, setError] = useState(false);
   const [unit, setUnit] = useState(null);
 
-  const roundedLat = lat.toFixed(2);
-  const roundedLon = lon.toFixed(2);
+  const roundedLat = lat.toFixed(0);
+  const roundedLon = lon.toFixed(0);
 
   useEffect(() => {
     const getPMValue = async () => {
-      const endpoint = `https://api.openaq.org/v2/latest?coordinates=${roundedLat},${roundedLon}`;
+      const endpoint = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${roundedLat}&lon=${roundedLon}&appid=${apiKey},`;
 
       try {
         const response = await fetch(endpoint);
@@ -20,11 +20,12 @@ const AirQuality = ({ lat, lon }) => {
 
         if (data) {
           console.log(data); // Log the data to the console
-          if (data.results.length > 0) {
-            const pmValue = data.results[0].measurements[5].value;
-            const unit = data.results[0].measurements[5].unit;
+          if (data.list > 0) {
+            const pmValue = data.list[0].components.pm2_5;
+            console.log(data.list);
+
             setPmValue(pmValue);
-            setUnit(unit);
+            setUnit('pm 2.5');
           } else {
             setError(true);
           }
