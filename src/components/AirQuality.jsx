@@ -12,7 +12,7 @@ const AirQuality = ({ lat, lon }) => {
 
   useEffect(() => {
     const getPMValue = async () => {
-      const endpoint = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${roundedLat}&lon=${roundedLon}&appid=${apiKey},`;
+      const endpoint = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${roundedLat}&lon=${roundedLon}&appid=${apiKey}`;
 
       try {
         const response = await fetch(endpoint);
