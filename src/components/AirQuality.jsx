@@ -6,9 +6,11 @@ const AirQuality = ({ lat, lon }) => {
   const [pmValue, setPmValue] = useState(null);
   const [error, setError] = useState(false);
   const [unit, setUnit] = useState(null);
+  const [aqi, setAqi] = useState(null);
 
   const roundedLat = lat.toFixed(0);
   const roundedLon = lon.toFixed(0);
+  const aqiConvert = ['Good', 'Fair', 'Moderate', 'Poor', 'Very Poor'];
 
   useEffect(() => {
     const getPMValue = async () => {
@@ -20,12 +22,14 @@ const AirQuality = ({ lat, lon }) => {
 
         if (data) {
           console.log(data); // Log the data to the console
-          if (data.list > 0) {
+          if (data.list.length > 0) {
             const pmValue = data.list[0].components.pm2_5;
-            console.log(data.list);
+            const aqiValue = data.list[0].main.aqi;
+            console.log(pmValue);
 
             setPmValue(pmValue);
-            setUnit('pm 2.5');
+            setUnit('μg/m3');
+            setAqi(aqiValue);
           } else {
             setError(true);
           }
@@ -39,6 +43,11 @@ const AirQuality = ({ lat, lon }) => {
     getPMValue();
   }, [roundedLat, roundedLon, apiKey]);
 
+  const getAQICorrespondingValue = (aqiValue) => {
+    const index = Math.min(Math.floor(aqiValue), aqiConvert.length - 1);
+    return aqiConvert[index];
+  };
+
   return (
     <div>
       <h1 className='aq-font'>Latitude: {roundedLat}</h1>
@@ -46,9 +55,14 @@ const AirQuality = ({ lat, lon }) => {
       {error ? (
         <h1 className='aq-font'>No air quality data available</h1>
       ) : (
-        <h1 className='aq-font'>
-          Air Quality: {pmValue} {unit}
-        </h1>
+        <div>
+          <h1 className='aq-font'>
+            Air Quality: {getAQICorrespondingValue(aqi)}
+          </h1>
+          <h2>
+            {pmValue * 10} {unit}
+          </h2>
+        </div>
       )}
     </div>
   );
