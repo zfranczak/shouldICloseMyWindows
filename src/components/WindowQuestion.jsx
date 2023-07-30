@@ -7,9 +7,9 @@ const WindowQuestion = ({ weatherData }) => {
   return (
     <div>
       {isOpenWindow ? (
-        <h1 className='window-answer-yes'>Yes! Close your windows!</h1>
+        <h1 className='window-answer-yes'>Close your windows!</h1>
       ) : (
-        <h1 className='window-answer-no'>No! Keep your windows open!</h1>
+        <h1 className='window-answer-no'>Keep your windows open!</h1>
       )}
     </div>
   );

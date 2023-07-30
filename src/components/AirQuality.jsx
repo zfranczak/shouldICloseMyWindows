@@ -64,7 +64,7 @@ const AirQuality = ({ lat, lon }) => {
   };
 
   return (
-    <div className='airQuality'>
+    <div className={`airQuality-${aqi}`}>
       {error ? (
         <h1 className='aq-font'>No air quality data available</h1>
       ) : (
@@ -72,6 +72,8 @@ const AirQuality = ({ lat, lon }) => {
           <div className='parameter-row'>
             <span className='city'>Air Quality: </span>
             <span className='city'>{getAQICorrespondingValue(aqi)}</span>
+            {console.log('aqi')}
+            {console.log(aqi)}
           </div>
           <div className='parameter-row'>
             <span className='parameter-label'>PM2.5:</span>
