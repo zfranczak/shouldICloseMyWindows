@@ -70,10 +70,8 @@ const AirQuality = ({ lat, lon }) => {
       ) : (
         <div>
           <div className='parameter-row'>
-            <span className='parameter-label'>Air Quality:</span>
-            <span className='parameter-value'>
-              {getAQICorrespondingValue(aqi)}
-            </span>
+            <span className='city'>Air Quality: </span>
+            <span className='city'>{getAQICorrespondingValue(aqi)}</span>
           </div>
           <div className='parameter-row'>
             <span className='parameter-label'>PM2.5:</span>
@@ -84,23 +82,33 @@ const AirQuality = ({ lat, lon }) => {
 
           <div className='parameter-row'>
             <span className='parameter-label'>SO2:</span>
-            <span className='parameter-value'>{soValue}</span>
+            <span className='parameter-value'>
+              {soValue} {unit}
+            </span>
           </div>
           <div className='parameter-row'>
             <span className='parameter-label'>NO2:</span>
-            <span className='parameter-value'>{noValue}</span>
+            <span className='parameter-value'>
+              {noValue} {unit}
+            </span>
           </div>
           <div className='parameter-row'>
             <span className='parameter-label'>PM10:</span>
-            <span className='parameter-value'>{pmbValue}</span>
+            <span className='parameter-value'>
+              {pmbValue} {unit}
+            </span>
           </div>
           <div className='parameter-row'>
             <span className='parameter-label'>O3:</span>
-            <span className='parameter-value'>{oValue}</span>
+            <span className='parameter-value'>
+              {oValue} {unit}
+            </span>
           </div>
           <div className='parameter-row'>
             <span className='parameter-label'>CO:</span>
-            <span className='parameter-value'>{coValue}</span>
+            <span className='parameter-value'>
+              {coValue} {unit}
+            </span>
           </div>
         </div>
       )}
